@@ -71,6 +71,50 @@ A lightweight "dynamic island" / notch for GNOME Shell that packs music, notific
 | `nmcli` | WiFi toggle |
 | `zenity` | Wallpaper folder picker |
 
-Install on Fedora:
+### Fedora
+
 ```bash
-sudo dnf install zenity pipewire-utils brightnessctl NetworkManager
+# zenity — graphical dialogs (wallpaper folder picker)
+sudo dnf install zenity
+
+# pipewire-utils — provides wpctl (volume control)
+sudo dnf install pipewire-utils
+
+# brightnessctl — screen brightness control
+sudo dnf install brightnessctl
+
+# NetworkManager — provides nmcli (WiFi toggle)
+sudo dnf install NetworkManager
+
+Ubuntu / Debian / Linux Mint / Pop!_OS
+
+# zenity — graphical dialogs (wallpaper folder picker)
+sudo apt install zenity
+
+# brightnessctl — screen brightness control
+sudo apt install brightnessctl
+
+# network-manager — provides nmcli (WiFi toggle)
+sudo apt install network-manager
+
+# Volume control uses pactl (pulseaudio-utils) or wpctl (pipewire-bin),
+# both are preinstalled on modern Ubuntu/Debian. If wpctl is missing:
+sudo apt install pipewire-bin
+
+
+Arch / Manjaro / EndeavourOS
+
+# zenity — graphical dialogs (wallpaper folder picker)
+sudo pacman -S zenity
+
+# brightnessctl — screen brightness control
+sudo pacman -S brightnessctl
+
+# networkmanager — provides nmcli (WiFi toggle)
+sudo pacman -S networkmanager
+
+# pipewire — provides wpctl (volume control)
+sudo pacman -S pipewire
+
+
+> Extension still runs without these — only the corresponding feature will be disabled.
