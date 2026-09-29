@@ -1,0 +1,646 @@
+/* ============================================================
+ * MyNotch — NotchNux style + tab animations
+ * Accent color & surface color được override bởi dynamic CSS
+ * (xem extension.js -> _applyAccentCSS / _applySurfaceCSS)
+ * ============================================================ */
+
+.mynotch-surface {
+    background-color: #0d0d10;
+    border-radius: 0px 0px 22px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 0px 16px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.28);
+    color: #f4f4f6;
+    font-size: 13px;
+}
+
+/* ---------- Pill ---------- */
+.mynotch-pill-content {
+    background-color: transparent;
+    spacing: 10px;
+    padding: 0 6px;
+    height: 40px;
+}
+.mynotch-pill-clock {
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.92);
+}
+.mynotch-pill-music {
+    spacing: 8px;
+    min-width: 30px;   /* đảm bảo không bị co về 0 */
+}
+.mynotch-eq {
+    spacing: 2px;
+    height: 12px;
+    min-width: 22px;   /* đảm bảo 4 thanh luôn có chỗ */
+    min-height: 12px;
+}
+.mynotch-eq-bar {
+    width: 3px;
+    height: 12px;
+    border-radius: 2px;
+    background-color: #7aa2ff;
+}
+.mynotch-pill-battery { spacing: 4px; }
+.mynotch-pill-battery-pct {
+    font-size: 12px; font-weight: bold;
+    color: rgba(255, 255, 255, 0.88);
+}
+.mynotch-pill-icon { color: rgba(255, 255, 255, 0.75); }
+
+/* ---------- Dashboard ---------- */
+.mynotch-dashboard {
+    padding: 14px 8px 18px 8px;
+    color: #f4f4f6;
+}
+.mynotch-header {
+    spacing: 10px;
+    margin-bottom: 16px;
+}
+
+.mynotch-tab-strip {
+    spacing: 3px;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 13px;
+}
+
+.mynotch-tab-btn {
+    padding: 7px 14px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12.5px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
+}
+.mynotch-tab-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+/* .mynotch-tab-btn-active → dynamic accent CSS */
+.mynotch-tab-icon { margin-right: 6px; color: rgba(255, 255, 255, 0.75); }
+/* .mynotch-tab-btn-active .mynotch-tab-icon → dynamic accent CSS */
+
+.mynotch-settings-btn {
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.65);
+    transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+/* .mynotch-settings-btn:hover → dynamic accent CSS */
+
+.mynotch-content { padding: 2px; }
+
+/* ============================================================
+ * Music tab
+ * ============================================================ */
+.mynotch-media-body { spacing: 24px; }
+.mynotch-media-mid { spacing: 2px; }
+.mynotch-vinyl-art-frame {
+    width: 52px; height: 52px; border-radius: 26px;
+    background-color: rgba(12, 12, 16, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 2px rgba(19, 19, 23, 0.9);
+}
+.mynotch-vinyl-art { width: 52px; height: 52px; border-radius: 26px; }
+
+.mynotch-eyebrow-row { spacing: 10px; margin-bottom: 2px; }
+/* .mynotch-eyebrow → dynamic accent CSS */
+.mynotch-eq { spacing: 2px; height: 12px; width: 22px; }
+/* .mynotch-eq-bar → dynamic accent CSS */
+
+.mynotch-track-title {
+    font-size: 19px; font-weight: bold;
+    color: #f4f4f6; margin-top: 4px;
+}
+.mynotch-track-artist {
+    font-size: 12.5px; color: rgba(255, 255, 255, 0.55);
+    margin-top: 2px;
+}
+
+.mynotch-transport { spacing: 14px; margin-top: 16px; }
+.mynotch-transport-btn {
+    width: 34px; height: 34px; border-radius: 999px;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: transparent;
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+.mynotch-transport-btn:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.08); }
+.mynotch-transport-primary {
+    width: 42px; height: 42px;
+    color: #0d0d10; background-color: #7aa2ff;
+}
+.mynotch-transport-primary:hover { color: #0d0d10; }
+
+.mynotch-knob-col { spacing: 8px; }
+.mynotch-knob-num { font-size: 16px; font-weight: bold; color: #f4f4f6; }
+.mynotch-scroll-hint {
+    spacing: 3px; color: rgba(255, 255, 255, 0.4);
+    font-size: 9px; font-weight: bold; letter-spacing: 1px;
+}
+
+.mynotch-timeline { spacing: 6px; margin-top: 4px; padding: 0 4px; }
+.mynotch-timeline-base {
+    height: 5px; min-height: 5px; border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+.mynotch-timeline-fill {
+    height: 5px; min-height: 5px; border-radius: 999px;
+    /* background-color → dynamic accent CSS */
+}
+.mynotch-timeline-labels { padding: 0 2px; }
+.mynotch-timeline-elapsed,
+.mynotch-timeline-total {
+    font-size: 10px; font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================
+ * TRAY tab — compact
+ * NOTE: St CSS is content-box; width + padding + border = total.
+ * ============================================================ */
+.mynotch-tray-panel { spacing: 12px; padding: 0; }
+
+.mynotch-meters-row { spacing: 6px; }
+.mynotch-meter-tile {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 8px 2px;
+    spacing: 5px;
+}
+.mynotch-meter-num { font-size: 12px; font-weight: bold; color: #f4f4f6; }
+.mynotch-meter-num-sm { font-size: 9px; }
+.mynotch-meter-label-row {
+    spacing: 3px;
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 9.5px; font-weight: bold;
+    letter-spacing: 0.4px;
+}
+
+.mynotch-tray-lower { spacing: 10px; }
+.mynotch-tray-knobs { spacing: 16px; }
+.mynotch-tray-knob { spacing: 3px; }
+.mynotch-tray-knob-val { font-size: 13px; font-weight: bold; color: #f4f4f6; }
+.mynotch-tray-knob-label {
+    font-size: 9px; font-weight: bold;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.8px;
+}
+
+.mynotch-tray-toggles { spacing: 8px; }
+.mynotch-tray-toggle {
+    width: 62px;
+    height: 62px;
+    padding: 4px;
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.7);
+}
+.mynotch-tray-toggle:hover { background-color: rgba(255, 255, 255, 0.10); }
+/* .mynotch-tray-toggle-on → dynamic accent CSS */
+.mynotch-tray-toggle-label {
+    font-size: 9px; font-weight: bold;
+    color: rgba(255, 255, 255, 0.80);
+    margin-top: 3px;
+    letter-spacing: 0.3px;
+}
+/* .mynotch-tray-toggle-on .mynotch-tray-toggle-label → dynamic accent CSS */
+
+.mynotch-tray-battery {
+    spacing: 10px;
+    padding: 10px 14px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+}
+/* .mynotch-tray-battery-icon → dynamic accent CSS */
+.mynotch-tray-battery-text { font-size: 14px; font-weight: bold; color: #f4f4f6; }
+.mynotch-tray-battery-sub {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-left: 6px;
+}
+.mynotch-bat-track {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 3px;
+}
+/* .mynotch-bat-fill → dynamic accent CSS */
+.mynotch-bat-low { background-color: #e8b06a; }
+
+/* ============================================================
+ * Wallpaper tab
+ * ============================================================ */
+.mynotch-wp-panel { spacing: 14px; }
+.mynotch-wp-header { spacing: 8px; margin-bottom: 3px; }
+.mynotch-wp-title { font-size: 13px; font-weight: bold; color: #f4f4f6; }
+.mynotch-wp-subtitle { font-size: 11px; color: rgba(255, 255, 255, 0.45); margin-top: 1px; }
+/* .mynotch-wp-btn → dynamic accent CSS */
+
+.mynotch-wp-scroll { max-height: 168px; }
+.mynotch-wp-scroll StScrollBar {
+    min-height: 0px; height: 0px;
+    opacity: 0; width: 0px;
+}
+.mynotch-wp-strip { spacing: 12px; padding: 4px 2px 8px 2px; }
+
+.mynotch-wp-cell {
+    padding: 4px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.04);
+    transition: background-color 150ms ease-out;
+}
+.mynotch-wp-cell:hover { background-color: rgba(255, 255, 255, 0.09); }
+/* .mynotch-wp-cell-active → dynamic accent CSS */
+.mynotch-wp-thumb {
+    border-radius: 8px;
+    width: 132px; height: 82px;
+    background-size: cover;
+    background-position: center;
+}
+.mynotch-wp-name {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 132px;
+    margin-top: 5px;
+    text-align: center;
+}
+.mynotch-wp-empty { spacing: 6px; padding: 28px 16px; }
+.mynotch-wp-empty-icon { color: rgba(255, 255, 255, 0.32); margin-bottom: 4px; }
+.mynotch-wp-empty-title { font-size: 12.5px; font-weight: bold; color: rgba(255, 255, 255, 0.75); }
+.mynotch-wp-empty-sub { font-size: 11px; color: rgba(255, 255, 255, 0.42); margin-top: 2px; }
+
+/* ============================================================
+ * Notifications tab
+ * ============================================================ */
+.mynotch-notif-panel { spacing: 12px; padding: 2px; }
+.mynotch-notif-header { spacing: 10px; margin-bottom: 4px; }
+.mynotch-notif-title {
+    font-size: 15px; font-weight: bold; color: #f4f4f6;
+}
+.mynotch-notif-subtitle {
+    font-size: 11px; color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+}
+/* .mynotch-notif-clear → dynamic accent CSS */
+
+.mynotch-notif-scroll { max-height: 280px; }
+.mynotch-notif-scroll StScrollBar {
+    min-width: 0px; width: 4px; opacity: 0.6;
+}
+
+.mynotch-notif-list { spacing: 8px; padding: 2px; }
+
+.mynotch-notif-item {
+    spacing: 12px;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    transition: background-color 150ms ease-out;
+}
+.mynotch-notif-item:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+/* .mynotch-notif-icon → dynamic accent CSS */
+.mynotch-notif-item-title {
+    font-size: 13px; font-weight: bold;
+    color: #f4f4f6;
+}
+.mynotch-notif-item-body {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 2px;
+}
+.mynotch-notif-dismiss {
+    width: 24px; height: 24px; border-radius: 999px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+}
+.mynotch-notif-dismiss:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #ffffff;
+}
+
+.mynotch-notif-empty { spacing: 6px; padding: 40px 16px; }
+.mynotch-notif-empty-icon { color: rgba(255, 255, 255, 0.32); margin-bottom: 6px; }
+.mynotch-notif-empty-title {
+    font-size: 13px; font-weight: bold;
+    color: rgba(255, 255, 255, 0.75);
+}
+.mynotch-notif-empty-sub {
+    font-size: 11px; color: rgba(255, 255, 255, 0.42);
+    margin-top: 2px;
+}
+
+/* ============================================================
+ * Notification peek
+ * ============================================================ */
+.mynotch-peek {
+    spacing: 12px;
+    padding: 12px 16px;
+    background-color: rgba(13, 13, 16, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.42);
+}
+.mynotch-peek-icon-box {
+    width: 42px; height: 42px; border-radius: 12px;
+    background-color: rgba(122, 162, 255, 0.18);
+}
+/* .mynotch-peek-icon → dynamic accent CSS */
+.mynotch-peek-title {
+    font-size: 13px; font-weight: bold;
+    color: #f4f4f6;
+}
+.mynotch-peek-body {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 2px;
+}
+
+/* ============================================================
+ * Power button + menu
+ * ============================================================ */
+.mynotch-power-btn { margin-right: 6px; }
+
+.mynotch-power-menu .popup-menu-item {
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+/* ============================================================
+ * Bluetooth Card (Tray tab)
+ * ============================================================ */
+.mynotch-bt-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 8px 14px;
+    spacing: 6px;
+}
+
+.mynotch-bt-head {
+    spacing: 8px;
+}
+
+.mynotch-bt-eyebrow {
+    font-size: 9.5px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1.2px;
+}
+
+.mynotch-bt-toggle {
+    padding: 5px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.75);
+    transition: background-color 150ms ease-out;
+}
+.mynotch-bt-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+/* .mynotch-bt-toggle-on → dynamic accent CSS */
+
+.mynotch-bt-list {
+    spacing: 4px;
+    margin-top: 2px;
+}
+
+.mynotch-bt-row {
+    padding: 4px 6px;
+    margin: 0 -6px;
+    border-radius: 8px;
+    transition: background-color 150ms ease-out;
+}
+.mynotch-bt-row:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.mynotch-bt-icon {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mynotch-bt-name {
+    font-size: 12px;
+    color: #eaeaee;
+    margin-left: 8px;
+}
+
+.mynotch-bt-batt-track {
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.14);
+    margin-left: 6px;
+}
+
+/* .mynotch-bt-batt-fill → dynamic accent CSS */
+
+.mynotch-bt-batt-low {
+    background-color: #e8b06a;
+}
+
+.mynotch-bt-pct {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    width: 30px;
+    text-align: right;
+    margin-left: 4px;
+}
+
+.mynotch-bt-status {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: 6px;
+}
+.mynotch-bt-status-on {
+    color: rgba(120, 200, 140, 0.9);
+}
+
+.mynotch-bt-empty {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 4px 0;
+}
+
+/* ============================================================
+ * Calendar tab
+ * ============================================================ */
+.mynotch-cal-panel { spacing: 10px; padding: 2px; }
+
+.mynotch-cal-summary {
+    spacing: 12px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+/* .mynotch-cal-summary-icon → dynamic accent CSS */
+.mynotch-cal-summary-day {
+    font-size: 16px; font-weight: bold;
+    color: #f4f4f6;
+}
+.mynotch-cal-summary-date {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 2px;
+}
+/* .mynotch-cal-today-btn → dynamic accent CSS */
+
+.mynotch-cal-strip {
+    padding: 0 2px 4px 2px;
+    height: 56px;
+    background-color: transparent;
+}
+.mynotch-cal-strip-row { spacing: 6px; }
+
+.mynotch-cal-pill {
+    width: 44px;
+    height: 52px;
+    padding: 5px 0 4px 0;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all 150ms ease-out;
+}
+.mynotch-cal-pill:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+/* .mynotch-cal-pill-active → dynamic accent CSS */
+/* .mynotch-cal-pill-today → dynamic accent CSS */
+.mynotch-cal-pill-near { width: 40px; }
+.mynotch-cal-pill-far {
+    width: 32px;
+    color: rgba(255, 255, 255, 0.32);
+}
+
+.mynotch-cal-weekday {
+    font-size: 9px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+}
+.mynotch-cal-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f4f4f6;
+    margin-top: 1px;
+}
+.mynotch-cal-pill-active .mynotch-cal-number { font-size: 22px; }
+/* .mynotch-cal-pill-today .mynotch-cal-number → dynamic accent CSS */
+.mynotch-cal-pill-near   .mynotch-cal-number { font-size: 14px; }
+.mynotch-cal-pill-far    .mynotch-cal-number { font-size: 12px; }
+
+/* .mynotch-cal-today-tag → dynamic accent CSS */
+
+.mynotch-cal-agenda {
+    spacing: 8px;
+    margin-top: 2px;
+}
+.mynotch-cal-agenda-header {
+    spacing: 8px;
+    margin-bottom: 4px;
+}
+.mynotch-cal-agenda-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #f4f4f6;
+}
+.mynotch-cal-agenda-date {
+    font-size: 11px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mynotch-cal-scroll { max-height: 200px; }
+.mynotch-cal-scroll StScrollBar {
+    min-width: 0px; width: 0px; opacity: 0;
+}
+.mynotch-cal-list { spacing: 7px; }
+
+.mynotch-cal-event {
+    spacing: 10px;
+    padding: 9px 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.mynotch-cal-time { width: 46px; spacing: 1px; }
+/* .mynotch-cal-start → dynamic accent CSS */
+.mynotch-cal-end {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+}
+.mynotch-cal-event-title {
+    font-size: 12.5px; font-weight: bold;
+    color: #f4f4f6;
+}
+.mynotch-cal-event-location {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.52);
+    margin-top: 2px;
+}
+
+.mynotch-cal-empty {
+    spacing: 5px;
+    padding: 18px 0;
+}
+/* .mynotch-cal-empty-icon → dynamic accent CSS */
+.mynotch-cal-empty-title {
+    font-size: 12.5px; font-weight: bold;
+    color: #f4f4f6;
+}
+.mynotch-cal-empty-sub {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.48);
+}
+
+/* ============================================================
+ * Dynamic sizing helpers
+ * ============================================================ */
+.mynotch-surface {
+    transition: background-color 200ms ease-out;
+}
+
+/* Font scale container */
+.mynotch-surface.scale-sm { font-size: 11px; }
+.mynotch-surface.scale-md { font-size: 13px; }
+.mynotch-surface.scale-lg { font-size: 15px; }
+
+/* Opacity variants */
+.mynotch-surface.opacity-50  { background-color: rgba(13, 13, 16, 0.50); }
+.mynotch-surface.opacity-70  { background-color: rgba(13, 13, 16, 0.70); }
+.mynotch-surface.opacity-90  { background-color: rgba(13, 13, 16, 0.90); }
+.mynotch-surface.opacity-100 { background-color: rgba(13, 13, 16, 1.00); }
+
+/* ============================================================
+ * Fix: chống lộ ô vuông tối khi bật blur
+ * ============================================================ */
+.mynotch-content,
+.mynotch-notif-scroll,
+.mynotch-cal-scroll,
+.mynotch-wp-scroll,
+.mynotch-notif-list,
+.mynotch-cal-list,
+.mynotch-wp-strip {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+/* ============================================================
+ * Island mode
+ * ============================================================ */
+.mynotch-surface.island {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

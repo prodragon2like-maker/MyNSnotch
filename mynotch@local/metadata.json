@@ -1,0 +1,8 @@
+{
+  "name": "NSnotch",
+  "description": "Personal notch extension by Quansu",
+  "uuid": "mynotch@local",
+  "shell-version": ["48"],
+  "version": 2,
+  "author": "Quansu"
+}
